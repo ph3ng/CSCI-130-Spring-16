@@ -1,3 +1,5 @@
+// Create a template that uses conditional logic
+
 package main
 import (
         "log"

@@ -1,3 +1,5 @@
+//Create the ""surfer page"" and serve it using Go
+
 package main
 import (
       "html/template"

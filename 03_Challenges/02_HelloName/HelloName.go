@@ -1,4 +1,6 @@
+/*Create a program which prints “Hello”, followed by your name to the terminal.*/
 package main
+
 import "fmt"
 
 func main() {
