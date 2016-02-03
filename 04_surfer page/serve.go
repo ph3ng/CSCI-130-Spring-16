@@ -15,20 +15,9 @@ func surfer(res http.ResponseWriter, req *http.Request)  {
     tmp.Execute(res, nil)
 }
 
-
-/*
-func back(res http.ResponseWriter, req *http.Request) {
-	http.ServeFile(res, req, "css/main.css")
-}
-*/
-
 func main() {
     http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css"))))
     http.Handle("/pic/", http.StripPrefix("/pic/", http.FileServer(http.Dir("pic"))))
     http.HandleFunc("/", surfer)
     http.ListenAndServe(":8080", nil)
 }
-
-// func img(res http.ResponseWriter, req *http.Request) {
-// 	http.ServeFile(res, req, "pics/surf.jpg")
-// }
