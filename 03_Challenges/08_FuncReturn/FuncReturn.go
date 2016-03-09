@@ -9,10 +9,10 @@ package main
 import "fmt"
 
 func main() {
-      numbool := func(n int) (int, bool){
-      return n / 2, n % 2 == 0
-      }
+	numbool := func(n int) (int, bool) {
+		return n / 2, n%2 == 0
+	}
 
-      fmt.Println(numbool(1))
-      fmt.Println(numbool(2))
+	fmt.Println(numbool(1))
+	fmt.Println(numbool(2))
 }
