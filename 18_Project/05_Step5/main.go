@@ -33,7 +33,7 @@ func anything(res http.ResponseWriter, req *http.Request) {
 	}
 	temp.Execute(res, nil)
 
-	cookie, err := req.Cookie("session-fino")
+	cookie, err := req.Cookie("session-fino")	
 
 	user.Age = req.FormValue("Age")
 	user.Name = req.FormValue("Name")
