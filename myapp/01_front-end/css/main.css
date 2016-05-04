@@ -1,4 +1,10 @@
 /* GENERAL */
+@media screen and (max-width:800px) {
+    body{
+        background-color: blue;
+        font-size: 40px;
+    }
+}
 
 * {
     /* for debugging: show border around elements */
