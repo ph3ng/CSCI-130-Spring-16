@@ -53,7 +53,7 @@ html, body, #atf {
 }
 
 /* set the hero image */
-#hero-img {
+#back-img {
     background-image: url("../img/confused.jpg");
     background-color: #grey;
     background-repeat: no-repeat;

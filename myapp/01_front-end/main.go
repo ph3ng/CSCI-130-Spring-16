@@ -12,6 +12,7 @@ func init() {
 	http.Handle("/favicon.ico", http.NotFoundHandler())
 
 	http.Handle("/css/", http.StripPrefix("/css", http.FileServer(http.Dir("css/"))))
+	http.Handle("/img/", http.StripPrefix("/img", http.FileServer(http.Dir("img/"))))
 	tpl = template.Must(template.ParseGlob("*.html"))
 }
 
