@@ -72,7 +72,7 @@ header {
     top: 0;
     width: 100%;
     height: 6rem;
-    background-color: grey;
+    background-color: red;
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(0,0,0,0.3);
@@ -123,7 +123,7 @@ header {
     height: 170px;
 
     /* set the color of the cta container */
-    background-color: silver;
+    background-color: lime;
 
     /* center text and button containers */
     /*      #cta-txt, #cta-btn */
@@ -195,7 +195,7 @@ header {
 }
 
 #cta-btn a:hover {
-    background-color: grey;
+    background-color: white;
 }
 
 /* ------------------------------------------- */
@@ -208,7 +208,7 @@ header {
 .nm {
     display: flex;
     flex-direction: column;
-    background: silver;
+    background: yellow;
 }
 
 .nm li {
@@ -251,7 +251,7 @@ header {
 }
 
 .nm li:hover {
-    background: grey;
+    background: black;
 }
 
 .nm li:last-child {
