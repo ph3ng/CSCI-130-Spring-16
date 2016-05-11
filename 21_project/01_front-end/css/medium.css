@@ -1,0 +1,79 @@
+/* disable menu in footer */
+/* on large devices, menu is displayed in header */
+/* nm = nav mobile */
+.mob {
+    display: none;
+}
+
+/* ABOVE THE FOLD */
+/* rulesets to show certain content above the fold */
+
+#back-img {
+    background-image: url("../img/confused.jpg");
+}
+
+/* HEADER */
+
+header {
+    height: 8.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+}
+#h1 {
+    width: 100%;
+    flex-grow: 4;
+    flex-basis: 0;
+}
+.desktop {
+    width: 100%;
+    flex-grow: 1;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: right;
+
+    /* font format */
+    color: white;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.desktop li {
+
+    /* grow vertically */
+    /* must be in container of some dimension */
+    height: 100%;
+
+    /* have each li element grow horizontally */
+    flex-grow: 1;
+
+    /* center the anchor elements */
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+
+.desktop li a {
+
+    /* grow vertically */
+    /* must be in container of some dimension */
+    height: 100%;
+
+    /* grow horizontally */
+    flex-grow: 1;
+
+    /* center the text wrapped by the anchor elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop li a:hover {
+    color: #0266C8;
+    background-color: white;
+}
