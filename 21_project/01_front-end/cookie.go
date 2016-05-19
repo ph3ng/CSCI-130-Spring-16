@@ -1,4 +1,4 @@
-package teamproject
+package main
 
 import (
 	"encoding/base64"

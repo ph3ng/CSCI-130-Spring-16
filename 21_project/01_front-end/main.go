@@ -1,6 +1,7 @@
-package teamproject
+package main
 
 import (
+	"fmt"
 	"html/template"
 	"io"
 	"net/http"
@@ -11,22 +12,19 @@ import (
 
 var tpl *template.Template
 
-const gcsBucket = "team_project_bucket.appspot.com"
+const gcsBucket = "team_project_bucket"
 
 func init() {
-	http.HandleFunc("/", index)
+	http.HandleFunc("/", handler)
 	http.Handle("/favicon.ico", http.NotFoundHandler())
 	http.Handle("/css/", http.StripPrefix("/css", http.FileServer(http.Dir("css/"))))
 	http.Handle("/img/", http.StripPrefix("/img", http.FileServer(http.Dir("img/"))))
 	tpl = template.Must(template.ParseGlob("*.html"))
 }
 
-func index(res http.ResponseWriter, req *http.Request) {
-	tpl.ExecuteTemplate(res, "index.html", nil)
-}
-
 func handler(res http.ResponseWriter, req *http.Request) {
 	ctx := appengine.NewContext(req)
+	tpl.ExecuteTemplate(res, "index.html", nil)
 
 	if req.URL.Path != "/" {
 		http.NotFound(res, req)
@@ -45,7 +43,7 @@ func handler(res http.ResponseWriter, req *http.Request) {
 		mpf, hdr, err := req.FormFile("dahui")
 		if err != nil {
 			log.Errorf(ctx, "ERROR handler req.FormFile: ", err)
-			http.Error(res, "We were unable to upload your file\n", http.StatusInternalServerError)
+			http.Error(res, fmt.Sprint("Error retrieving file", mpf, hdr, err), http.StatusInternalServerError)
 			return
 		}
 		defer mpf.Close()
@@ -72,4 +70,5 @@ func handler(res http.ResponseWriter, req *http.Request) {
 
 	res.Header().Set("Content-Type", "text/html; charset=utf-8")
 	io.WriteString(res, html)
+	tpl.ExecuteTemplate(res, "index1.html", nil)
 }
